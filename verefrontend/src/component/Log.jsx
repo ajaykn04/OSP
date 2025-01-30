@@ -31,7 +31,7 @@ const Log = () => {
           }}
         >
           <img 
-            src="/POMA.ico" 
+            src="/POMA.ico"
             alt="Login Icon" 
             style={{ width: '100px', marginBottom: '1rem' }} 
           />

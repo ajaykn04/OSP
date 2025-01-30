@@ -2,7 +2,7 @@ import { AppBar, Avatar, Button, Container, IconButton, styled, Toolbar, Typogra
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import profileImage from '../assets/logindefault.png';
-import iconImage from '../assets/POMA.ico';
+import iconImage from '../assets/OSP.ico';
 
 const StyledToolbar = styled(Toolbar)`
     background-color: black;
@@ -23,9 +23,9 @@ const Navbar = () => {
         <AppBar position='fixed'>
             <StyledToolbar >
                 
-                <Avatar sx={{ width: 50, height: 50 }} alt="POMA" src={iconImage} />
+                <Avatar sx={{ width: 50, height: 50 }} alt="OSP" src={iconImage} />
                 {/* <center style={{display:'flex',justifyContent:'flex-start'}}> */}
-                <Typography style={{ fontSize:'40px', fontFamily: 'fantasy', color:'white' }}>&nbsp;POMA</Typography>
+                <Typography style={{ fontSize:'40px', fontFamily: 'fantasy', color:'white' }}>&nbsp;OSP</Typography>
                 {/* <Typography  variant='overline' style={{fontFamily:'initial'}}>For the best products</Typography> */}
                 &nbsp;&nbsp;
                 <Typography variant='overline' style={{fontFamily:'initial'}}>For&nbsp;</Typography>
