@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import {
   Button,
@@ -15,8 +15,8 @@ import {
 const Allrecipes = () => {
   const [loading, setLoading] = useState(true);
   const [recipes, setRecipes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-
+  const { state } = useLocation();
+  console.log(state.query)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,53 +33,12 @@ const Allrecipes = () => {
         setLoading(false);
       });
   }, []);
-  const filteredRecipes = recipes.filter((recipe) =>
-    recipe.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+ 
 
   return (
     <div>
       <Navbar />
-      <Container sx={{ mt: 10, mb: -3 }}>
-        <TextField
-          fullWidth
-          variant="outlined"
-          placeholder="Search Recipes"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          sx={{
-            mb: 4,
-            backgroundColor: "#F3F4F6",
-            borderRadius: "25px",
-            "& .MuiOutlinedInput-root": {
-              "& fieldset": {
-                borderColor: "none",
-              },
-              "&:hover fieldset": {
-                borderColor: "none",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "none",
-                borderWidth: "0px",
-              },
-              "&.Mui-focused .MuiOutlinedInput-input": {
-                color: "black",
-              },
-            },
-            "& .MuiOutlinedInput-input": {
-              padding: "12px 20px",
-            },
-            "& .MuiInputBase-input::placeholder": {
-              background:
-                "linear-gradient(90deg, red 3%, orange 3%, yellow 3%, green 4%, blue 6%, indigo 7%, violet 10%)", // Condensed rainbow gradient
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              textFillColor: "transparent",
-            },
-          }}
-        />
-      </Container>
+      
       {loading ? (
         <center>
           <br />
@@ -90,7 +49,7 @@ const Allrecipes = () => {
         </center>
       ) : (
         <Grid container spacing={2}>
-          {filteredRecipes.map((recipe, index) => (
+          {recipes.map((recipe, index) => (
             <Grid
               item
               xs={12}

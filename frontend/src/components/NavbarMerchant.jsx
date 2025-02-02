@@ -8,21 +8,21 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React from 'react'
 import { useNavigate } from "react-router-dom";
 import iconImage from "/logo1.png";
-import LogoutIcon from "@mui/icons-material/Logout";
+import profileImage from "/defaultlogin.png";
 
 const StyledToolbar = styled(Toolbar)`
   background-color: black;
 `;
+const NavbarMerchant = () => {
 
-const NavbarAdmin = () => {
   const navigate = useNavigate();
-
-  const logoutHandler = () => {
-    navigate("/");
-  };
+  
+    const handleProfileClick = () => {
+      navigate("/profile");
+    };
 
   return (
     <div>
@@ -34,45 +34,46 @@ const NavbarAdmin = () => {
             src={iconImage}
           />
           <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography
-              style={{
-                fontSize: "20px",
-                fontFamily: "fantasy",
-                color: "white",
-                marginBottom: -15,
-                marginLeft: 0,
-              }}
-            >
-              Admin
-            </Typography>
-            <Typography
-              style={{
-                fontSize: "30px",
-                fontFamily: "fantasy",
-                color: "white",
-              }}
-            >
-              OSP
-            </Typography>
-          </div>
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Typography
+                        style={{
+                          fontSize: "20px",
+                          fontFamily: "fantasy",
+                          color: "white",
+                          marginBottom: -15,
+                          marginLeft: 0,
+                        }}
+                      >
+                        Merchant
+                      </Typography>
+                      <Typography
+                        style={{
+                          fontSize: "30px",
+                          fontFamily: "fantasy",
+                          color: "white",
+                        }}
+                      >
+                        OSP
+                      </Typography>
+                    </div>
           <Container
             sx={{
-              marginLeft: 43,
-              justifyItems: "center",
               display: "flex",
-              justifyContent: "flex",
+              justifyContent: "flex-start",
               gap: "6rem",
+              ml: 25,
             }}
           >
             <Button
               variant="text"
-              onClick={() => navigate("/admindash")}
+              onClick={() => {
+                navigate("/merchantdash");
+              }}
               style={{
                 fontSize: "20px",
                 fontFamily: "fantasy",
@@ -91,7 +92,9 @@ const NavbarAdmin = () => {
             </Button>
             <Button
               variant="text"
-              onClick={() => navigate("/admin/users")}
+              onClick={() => {
+                navigate("/recipe/add");
+              }}
               style={{
                 fontSize: "20px",
                 fontFamily: "fantasy",
@@ -105,12 +108,14 @@ const NavbarAdmin = () => {
                   color: "orange",
                 }}
               >
-                USERS
+                Add Recipe
               </Typography>
             </Button>
             <Button
               variant="text"
-              onClick={() => navigate("/admin/recipes")}
+              onClick={() => {
+                navigate("/user/recipes");
+              }}
               style={{
                 fontSize: "20px",
                 fontFamily: "fantasy",
@@ -124,17 +129,38 @@ const NavbarAdmin = () => {
                   color: "orange",
                 }}
               >
-                RECIPES
+                My Recipes
+              </Typography>
+            </Button>
+            <Button
+              variant="text"
+              onClick={() => {
+                navigate("/recipes");
+              }}
+              style={{
+                fontSize: "20px",
+                fontFamily: "fantasy",
+                color: "black",
+              }}
+            >
+              <Typography
+                style={{
+                  fontFamily: "fantasy",
+                  fontSize: "20px",
+                  color: "orange",
+                }}
+              >
+                All Recipes
               </Typography>
             </Button>
           </Container>
-          <IconButton sx={{ color: "white" }} onClick={logoutHandler}>
-            <LogoutIcon />
+          <IconButton onClick={handleProfileClick}>
+            <Avatar alt="Profile" src={profileImage} />
           </IconButton>
         </StyledToolbar>
       </AppBar>
     </div>
-  );
-};
+  )
+}
 
-export default NavbarAdmin;
+export default NavbarMerchant

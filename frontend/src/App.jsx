@@ -14,6 +14,8 @@ import { AppContext } from "./AppContext";
 import { useState } from "react";
 import Users from "./components/Users";
 import Recipes from "./components/Recipes";
+import Merchantdashboard from "./components/Merchantdashboard";
+import Deliveryagentdashboard from "./components/Deliveryagentdashboard";
 
 function App() {
   const [data, setData] = useState({
@@ -43,6 +45,8 @@ function App() {
             <Route path="/detrecipeadmin" element={<DetailedrecipeAdmin />} />
             <Route path="/admin/users" element={<Users />} />
             <Route path="/admin/recipes" element={<Recipes />} />
+            <Route path="/merchantdash" element={<Merchantdashboard />}/>
+            <Route path="/deliveryagentdash" element={<Deliveryagentdashboard/>}/>
           </Routes>
         </AppContext.Provider>
       </BrowserRouter>

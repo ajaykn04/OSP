@@ -129,12 +129,12 @@ const Addrecipe = () => {
       >
         <Box sx={styles.box_style}>
           <img
-            src="/Chef.ico"
+            src="/logo1.png"
             alt="Login Icon"
             style={{
-              width: "200px",
-              marginBottom: "-1.5rem",
-              marginTop: "-5rem",
+              width: "100px",
+              marginBottom: "-.5rem",
+              marginTop: "-2.5rem",
             }}
           />
           <Typography

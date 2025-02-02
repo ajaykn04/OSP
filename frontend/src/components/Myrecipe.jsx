@@ -77,7 +77,7 @@ const Myrecipe = () => {
       ) : empty ? (
         <center>
           <Typography style={{ marginTop: "50vh" }}>
-            You don't have any recipes,&nbsp;
+            You are broke,&nbsp;
             <Button
               sx={{
                 textTransform: "none",
@@ -85,11 +85,11 @@ const Myrecipe = () => {
               }}
               style={{ color: "transparent" }}
               onClick={() => {
-                navigate("/recipe/add");
+                navigate("/userdash");
               }}
             >
               <Typography style={{ color: "orange" }}>
-                Create new recipe
+                Wanna buy
               </Typography>
             </Button>
           </Typography>
