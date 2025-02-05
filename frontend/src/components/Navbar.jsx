@@ -77,6 +77,7 @@ const Navbar = () => {
           >
             <Container
               sx={{
+                ml:10,  //comon 1
                 display: "flex",
                 justifyContent: "flex-start",
                 gap: "3rem",
@@ -104,33 +105,12 @@ const Navbar = () => {
                   HOME
                 </Typography>
               </Button>
-              <Button
-                variant="text"
-                onClick={() => {
-                  navigate("/recipe/add");
-                }}
-                style={{
-                  marginRight: 10,
-                  fontSize: "20px",
-                  fontFamily: "fantasy",
-                  color: "black",
-                }}
-              >
-                <Typography
-                  style={{
-                    fontFamily: "fantasy",
-                    fontSize: "20px",
-                    color: "orange",
-                  }}
-                >
-                  Add Recipe
-                </Typography>
-              </Button>
+              
             </Container>
 
             <Container
               sx={{
-                ml: -15,
+                ml: -25, //comon 1
                 mr: -2,
                 display: "flex",
                 justifyContent: "center",

@@ -36,9 +36,7 @@ const Userdashboard = () => {
       });
   }, []);
 
-  const filteredRecipys = recipys.filter(
-    (recipy) => recipy.category === selectedCategory
-  );
+
 
   useEffect(() => {
     axios
@@ -176,24 +174,12 @@ const Userdashboard = () => {
         </Carousel>
       )}
 
-      <div className="recipy-container">
-        <h2 className="category-title">Category</h2>
-        <div className="category-buttons">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`category-button ${
-                selectedCategory === category ? "active" : ""
-              }`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+      <div className="product-container">
+        <h2 className="featured-title">Featured or Recommended Products</h2>
+        
 
         <Grid container spacing={2} sx={{ mt: 2 }}>
-          {filteredRecipys.map((recipy, index) => (
+          {recipes.map((recipy, index) => (
             <Grid
               item
               xs={12}
