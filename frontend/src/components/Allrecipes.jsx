@@ -37,17 +37,19 @@ const Allrecipes = () => {
 
   return (
     <div>
+      <br />
+          <br />
+          <br />
+          <br />
       <Navbar />
       
       {loading ? (
         <center>
-          <br />
-          <br />
-          <br />
-          <br />
+          
           Loading...
         </center>
       ) : (
+        
         <Grid container spacing={2}>
           {recipes.map((recipe, index) => (
             <Grid
@@ -81,7 +83,7 @@ const Allrecipes = () => {
                     "&:hover": { borderColor: "darkorange" },
                   }}
                   onClick={() => {
-                    navigate("/detrecipe", { state: recipe });
+                    //navigate("/detrecipe", { state: recipe });
                   }}
                   style={{
                     color: "black",
@@ -108,7 +110,7 @@ const Allrecipes = () => {
                         objectFit: "cover",
                       }}
                     />
-                    <Typography
+                    {/* <Typography
                       variant="subtitle1"
                       fontFamily={"cursive"}
                       sx={{
@@ -119,7 +121,7 @@ const Allrecipes = () => {
                       }}
                     >
                       {recipe.name}
-                    </Typography>
+                    </Typography> */}
                     <Rating
                       name={`rating-${index}`}
                       value={recipe.rating || 0}

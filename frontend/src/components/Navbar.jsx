@@ -120,7 +120,7 @@ const Navbar = () => {
               <TextField
                 fullWidth
                 variant="outlined"
-                placeholder="Search Recipes"
+                placeholder="Search for Products"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)} 
                 onKeyDown={handleKeyDown}

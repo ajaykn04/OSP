@@ -52,7 +52,7 @@ const Userdashboard = () => {
   }, []);
 
   const handleImageClick = (recipe) => {
-    navigate("/detrecipe", { state: recipe });
+    //navigate("/detrecipe", { state: recipe });
   };
 
   const handleSlideChange = (index) => {
@@ -211,7 +211,7 @@ const Userdashboard = () => {
                     "&:hover": { borderColor: "darkorange" },
                   }}
                   onClick={() => {
-                    navigate("/detrecipe", { state: recipy });
+                    //navigate("/detrecipe", { state: recipy });
                   }}
                   style={{
                     color: "black",
@@ -238,7 +238,7 @@ const Userdashboard = () => {
                         objectFit: "cover",
                       }}
                     />
-                    <Typography
+                    {/* <Typography
                       variant="subtitle1"
                       fontFamily={"cursive"}
                       sx={{
@@ -249,7 +249,7 @@ const Userdashboard = () => {
                       }}
                     >
                       {recipy.name}
-                    </Typography>
+                    </Typography> */}
                     <Rating
                       name={`rating-${index}`}
                       value={recipy.rating || 0}
